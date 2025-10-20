@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Trailer Income Model</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Vintage Trailer Income Model</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="contribute.html">Contribute</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card" id="model-explanation">
+      <h2>Sales & Rental Model Explanation</h2>
+      <p>
+        Own the land? Huge advantage! You can either sell a trailer for a one-time profit or rent it for consistent income.
+      </p>
+      <ul>
+        <li><strong>Purchase Cost:</strong> Cost to acquire trailer (e.g., $500)</li>
+        <li><strong>Remodel Cost:</strong> Cost to remodel trailer ($0 if using reclaimed materials)</li>
+        <li><strong>Maintenance:</strong> Monthly upkeep (e.g., $50–$100)</li>
+        <li><strong>Selling Price:</strong> Expected sale price (e.g., $5,000–$10,000)</li>
+        <li><strong>Monthly Rent:</strong> Amount charged if rented (e.g., $700/month)</li>
+      </ul>
+      <p>
+        <strong>Profit Calculation:</strong><br>
+        Selling profit = Selling Price - (Purchase Cost + Remodel Cost)<br>
+        Renting profit = Monthly Rent - Maintenance. Break-even shows how quickly you recover your investment.
+      </p>
+    </section>
+
+    <section class="card" id="calculator">
+      <h2>Profit Calculator</h2>
+      <form id="profitForm">
+        <div class="input-group">
+          <label>Trailer Purchase Cost ($)</label>
+          <input type="number" id="purchaseCost" value="500">
+        </div>
+        <div class="input-group">
+          <label>Remodel Cost ($)</label>
+          <input type="number" id="remodelCost" value="0">
+        </div>
+        <div class="input-group">
+          <label>Monthly Maintenance ($)</label>
+          <input type="number" id="maintenance" value="50">
+        </div>
+        <div class="input-group">
+          <label>Selling Price ($)</label>
+          <input type="number" id="sellingPrice" value="5000">
+        </div>
+        <div class="input-group">
+          <label>Monthly Rent ($)</label>
+          <input type="number" id="monthlyRent" value="700">
+        </div>
+        <button type="button" onclick="calculateProfit()">Calculate Profit</button>
+      </form>
+
+      <div id="results">
+        <h3>Results</h3>
+        <p id="sellingProfit"></p>
+        <p id="rentingProfit"></p>
+        <p id="breakEven"></p>
+      </div>
+
+      <canvas id="profitChart" height="200"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vintage Trailer Income Model</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
